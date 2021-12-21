@@ -5,7 +5,7 @@
       @click="click">
       <i
         v-if="isFullscreen"
-        class="iconfont icon-suoxiao">恢复</i>
+        class="iconfont icon-suoxiao"></i>
       <i
         v-else
         class="iconfont icon-quanping">全屏</i>
@@ -58,11 +58,10 @@ export default {
 
 <style lang="less" scoped>
   .icon {
-    position: fixed;
-    right: 0;
-    top: 0;
     .button {
       padding: 10px;
+      opacity: .4;
+      cursor: pointer;
       &:hover {
         opacity: .5;
       }

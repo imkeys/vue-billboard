@@ -1,3 +1,5 @@
+@color: #00cef2;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -12,7 +14,7 @@ html {
 
 body {
 	height: 100%;
-	font: 14px/1 'Microsoft Yahei', Arial;
+	font: 14px/1 '微軟正黑體', 'Microsoft Yahei', Arial;
 	color: #ffffff;
 	background: #050e27;
 }
@@ -88,4 +90,57 @@ a {
 
 .el-message {
 	min-width: 100px !important;
+}
+
+.el-box {
+  position: fixed;
+  padding: 5px;
+  .border {
+    .line {
+      position: absolute;
+    }
+    .line1 {
+      left: 0;
+      top: 30px;
+      bottom: 0;
+      border-left: 2px solid @color;
+    }
+    .line2 {
+      left: 0;
+      right: 80px;
+      bottom: 0;
+      border-bottom: 2px solid @color;
+    }
+    .line3 {
+      left: 200px;
+      top: 0;
+      right: 0;
+      border-top: 2px solid @color;
+    }
+    .line4 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-right: 2px solid @color;
+    }
+  }
+  .inner {
+    position: relative;
+    padding: 20px;
+    background: transparent;
+    box-shadow: 0 0 50px rgba(0, 70, 255, .3) inset;
+    .thead {
+      position: absolute;
+      left: 0;
+      top: -20px;
+      h3 {
+        line-height: 40px;
+        font-size: 16px;
+        color: @color;
+      }
+    }
+    .tbody {
+      position: relative;
+    }
+  }
 }

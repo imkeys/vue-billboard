@@ -5,10 +5,10 @@
       @click="click">
       <i
         v-if="isFullscreen"
-        class="iconfont icon-suoxiao">11111</i>
+        class="iconfont icon-suoxiao">恢复</i>
       <i
         v-else
-        class="iconfont icon-quanping">222222222</i>
+        class="iconfont icon-quanping">全屏</i>
     </div>
   </div>
 </template>
@@ -58,27 +58,13 @@ export default {
 
 <style lang="less" scoped>
   .icon {
-    position: relative;
-    text-align: center;
-    height: 50px;
-    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
     .button {
-      width: 30px;
-      height: 30px;
-      line-height: 0;
-      position: relative;
+      padding: 10px;
       &:hover {
-        .iconfont {
-          color: #409EFF;
-        }
-      }
-      .iconfont {
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        font-size: 22px;
-        color: #666666;
-        cursor: pointer;
+        opacity: .5;
       }
     }
   }

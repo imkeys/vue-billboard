@@ -50,8 +50,8 @@ module.exports = {
     },
     devServer: {
       disableHostCheck: true,
-      port: '9201',
-      open: 'http://localhost:9201/#/login',
+      port: '9205',
+      open: 'http://localhost:9205/#/login',
       proxy: {
         '/': {
           target: 'https://result.eolinker.com',
@@ -61,21 +61,6 @@ module.exports = {
           }
         }
       }
-    },
-    plugins: [
-      new FileManagerPlugin({
-        events: {
-          onEnd: {
-            delete: [
-              './dist.zip'
-            ],
-            archive: [{
-              source: './dist',
-              destination: './dist.zip'
-            }]
-          }
-        }
-      })
-    ]
+    }
   }
 }

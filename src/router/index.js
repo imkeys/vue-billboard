@@ -2,9 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // Router Modules
-import homeRouter from './modules/home'
-import houseRouter from './modules/house'
-import userRouter from './modules/user'
 
 Vue.use(Router)
 
@@ -12,35 +9,17 @@ Vue.use(Router)
 export const BASIC_ROUTES = [
   {
     path: '/(index)?',
-    redirect: '/home',
-    hidden: true
-  },
-  homeRouter,
-  houseRouter,
-  userRouter,
-  {
-    path: '/register',
-    name: 'register',
-    component: () => import('@/views/register/index'),
-    hidden: true
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login/index'),
-    hidden: true
+    component: () => import('@/views/index/')
   },
   {
     path: '/404',
     name: 'notFind',
-    component: () => import('@/views/error-page/404'),
-    hidden: true
+    component: () => import('@/views/error-page/404')
   },
   {
     path: '/500',
     name: 'serveError',
-    component: () => import('@/views/error-page/500'),
-    hidden: true
+    component: () => import('@/views/error-page/500')
   }
 ]
 
@@ -48,12 +27,12 @@ export const ASYNC_ROUTES = [
   {
     noAuth: true,
     path: '*',
-    redirect: '/404',
-    hidden: true
+    redirect: '/404'
   }
 ]
 
 const createRouter = () => new Router({
+  mode: 'history',
   scrollBehavior: () => ({
     y: 0
   }),

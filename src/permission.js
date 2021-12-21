@@ -15,11 +15,7 @@ const routeInstance = new Vue({
 Vue.prototype.$matchedRoutes = routeInstance
 
 const WHITE_LIST = [
-  '/login',
-  '/home',
-  '/house',
-  '/house/detail',
-  '/user'
+  '/'
 ]
 
 NProgress.configure({

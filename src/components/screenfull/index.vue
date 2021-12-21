@@ -5,10 +5,10 @@
       @click="click">
       <i
         v-if="isFullscreen"
-        class="iconfont icon-suoxiao"></i>
+        class="iconfont icon-suoxiao">11111</i>
       <i
         v-else
-        class="iconfont icon-quanping"></i>
+        class="iconfont icon-quanping">222222222</i>
     </div>
   </div>
 </template>
@@ -17,7 +17,6 @@
 import screenfull from 'screenfull'
 
 export default {
-  name: 'Screenfull',
   data () {
     return {
       isFullscreen: false

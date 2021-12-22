@@ -9,6 +9,7 @@ import App from './App'
 import elementui from 'element-ui'
 import VueI18n from 'vue-i18n'
 import Cookies from 'js-cookie'
+import * as echarts from 'echarts'
 
 import './permission'
 import '@/styles/common.css'
@@ -35,6 +36,7 @@ Vue.use(elementui, {
 })
 
 Vue.prototype.$axios = axios
+Vue.prototype.$echarts = echarts
 
 let vm = new Vue({
   router,

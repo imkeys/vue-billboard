@@ -17,6 +17,7 @@
 <script>
 import elTools from './components/tools/'
 import elHeader from './components/header/'
+import elFlash from './components/flash/'
 import elBanjie from './components/banjie/'
 import elBanjie2 from './components/banjie2/'
 import elRemen from './components/remen/'
@@ -30,6 +31,7 @@ export default {
   components: {
     elTools,
     elHeader,
+    elFlash,
     elBanjie,
     elBanjie2,
     elRemen,

@@ -27,7 +27,7 @@
     bottom: 30px;
     width: 25vw;
     .tbody {
-      height: calc((100vh - 260px) * .5 * .5 - 40px);
+      height: calc(((100vh - 160px) * .5 - 30px) * .5 - 50px);
     }
   }
 </style>

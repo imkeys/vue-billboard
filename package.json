@@ -10,13 +10,14 @@
     "build": "cross-env NODE_ENV=production vue-cli-service build --mode production"
   },
   "dependencies": {
+    "echarts": "^5.2.2",
     "js-cookie": "^2.2.1",
     "nprogress": "0.2.0",
+    "path-to-regexp": "2.4.0",
     "screenfull": "^5.0.2",
-    "vue-i18n": "^8.17.4",
     "vue": "2.6.11",
-    "vuex": "^3.3.0",
-    "path-to-regexp": "2.4.0"
+    "vue-i18n": "^8.17.4",
+    "vuex": "^3.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",

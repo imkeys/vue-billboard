@@ -24,10 +24,10 @@
 <style lang="less" scoped>
   .el-box {
     right: 30px;
-    bottom: calc(50px + 100px + 125px);
+    bottom: calc(((100vh - 160px) * .5 - 30px) * .5 + 60px);
     width: 25vw;
     .tbody {
-      height: calc((100vh - 260px) * .5 * .5 - 40px);
+      height: calc(((100vh - 160px) * .5 - 30px) * .5 - 50px);
     }
   }
 </style>

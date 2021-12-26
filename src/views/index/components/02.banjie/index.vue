@@ -53,8 +53,8 @@ export default {
         { label: '今日受理', value: 1659 },
         { label: '今日办结', value: 1519 },
         { label: '办结率', value: '98.25%' },
-        { label: '累计受理', value: 188000 },
-        { label: '累计办结', value: 160590 },
+        { label: '累计受理', value: 1880 },
+        { label: '累计办结', value: 1605 },
         { label: '办结率', value: '97.26%' }
       ],
       data: [1.2, 1.6, 1.8, 2.2, 3, 4, 4.5, 3, 2, 4, 3.5, 2.6]
@@ -115,10 +115,9 @@ export default {
           data: this.data
         }]
       })
-      window.onresize = () => {
-        console.log(111111)
+      window.addEventListener('resize', () => {
         $chart.resize()
-      }
+      })
     }
   }
 }

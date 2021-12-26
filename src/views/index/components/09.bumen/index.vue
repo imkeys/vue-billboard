@@ -53,7 +53,6 @@ export default {
     })
     this.data.label = labels
     this.data.value = values
-    console.log(this.data)
     this.drawLine()
   },
   methods: {
@@ -82,9 +81,9 @@ export default {
           data: this.data.list
         }]
       })
-      window.onresize = () => {
+      window.addEventListener('resize', () => {
         $chart.resize()
-      }
+      })
     }
   }
 }

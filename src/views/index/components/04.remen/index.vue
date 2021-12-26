@@ -98,9 +98,9 @@ export default {
           data: this.data
         }]
       })
-      window.onresize = () => {
+      window.addEventListener('resize', () => {
         $chart.resize()
-      }
+      })
     },
     drawLine2 () {
       const chart = document.querySelector('.chart3')
@@ -159,9 +159,9 @@ export default {
           }
         ]
       })
-      window.onresize = () => {
+      window.addEventListener('resize', () => {
         $chart.resize()
-      }
+      })
     }
   }
 }

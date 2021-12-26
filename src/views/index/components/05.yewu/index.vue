@@ -100,9 +100,9 @@ export default {
           data: this.data
         }]
       })
-      window.onresize = () => {
+      window.addEventListener('resize', () => {
         $chart.resize()
-      }
+      })
     }
   }
 }

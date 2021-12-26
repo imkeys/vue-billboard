@@ -17,15 +17,15 @@
 <script>
 import elTools from './components/tools/'
 import elHeader from './components/header/'
-import elFlash from './components/flash/'
-import elBanjie from './components/banjie/'
-import elBanjie2 from './components/banjie2/'
-import elRemen from './components/remen/'
-import elYewu from './components/yewu/'
-import elYewu2 from './components/yewu2/'
-import elManyi from './components/manyi/'
-import elQingkuang from './components/qingkuang/'
-import elBumen from './components/bumen/'
+import elFlash from './components/01.flash/'
+import elBanjie from './components/02.banjie/'
+import elBanjie2 from './components/03.banjie2/'
+import elRemen from './components/04.remen/'
+import elYewu from './components/05.yewu/'
+import elYewu2 from './components/06.yewu2/'
+import elManyi from './components/07.manyi/'
+import elQingkuang from './components/08.qingkuang/'
+import elBumen from './components/09.bumen/'
 
 export default {
   components: {

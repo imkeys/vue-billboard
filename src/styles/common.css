@@ -94,31 +94,72 @@ a {
   left: 0;
   top: 30px;
   bottom: 0;
-  border-left: 2px solid #00cef2;
+  border-left: 1px solid #00cef2;
 }
 .el-box .border .line2 {
   left: 0;
-  right: 80px;
+  right: 100px;
   bottom: 0;
-  border-bottom: 2px solid #00cef2;
+  border-bottom: 1px solid #00cef2;
 }
 .el-box .border .line3 {
   left: 200px;
   top: 0;
   right: 0;
-  border-top: 2px solid #00cef2;
+  border-top: 1px solid #00cef2;
 }
 .el-box .border .line4 {
   top: 0;
   right: 0;
-  bottom: 0;
-  border-right: 2px solid #00cef2;
+  bottom: 25px;
+  border-right: 1px solid #00cef2;
+}
+.el-box .border .line5 {
+  left: 140px;
+  top: -1px;
+  width: 65px;
+}
+.el-box .border .line5::before,
+.el-box .border .line5::after {
+  content: '';
+  display: inline-flex;
+  height: 10px;
+  width: 20px;
+  border: 1px solid #00cef2;
+  transform: skewx(-30deg);
+}
+.el-box .border .line5::after {
+  width: 40px;
+  margin: 0 0 0 1px;
+}
+.el-box .border .line6 {
+  right: 0;
+  bottom: 0px;
+  width: 80px;
+}
+.el-box .border .line6::before,
+.el-box .border .line6::after {
+  content: '';
+  display: inline-flex;
+  height: 10px;
+  width: 20px;
+  border: 1px solid #00cef2;
+}
+.el-box .border .line6::after {
+  width: 40px;
+}
+.el-box .border .line6 em {
+  display: inline-flex;
+  width: 5px;
+  height: 10px;
+  background: #00cef2;
+  margin: 0 5px;
 }
 .el-box .inner {
   position: relative;
   padding: 20px;
   background: transparent;
-  box-shadow: 0 0 50px rgba(0, 70, 255, 0.3) inset;
+  box-shadow: 0 0 50px rgba(0, 70, 255, 0.8) inset;
 }
 .el-box .inner .thead {
   position: absolute;

@@ -9,7 +9,8 @@ export function toggleLoginStatus (status = false) {
 }
 
 export function getGroup () {
-  return [store.getters.user.group]
+  console.log(store.getters.user && store.getters.user.group)
+  return ['admin']
 }
 
 export function getToken () {

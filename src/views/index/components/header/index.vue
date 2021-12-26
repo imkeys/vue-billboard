@@ -23,7 +23,7 @@
       line-height: 50px;
       font-size: 40px;
       text-align: center;
-      background-image: linear-gradient(180deg, #ffffff 0, #ffffff 30%, #000000 100%);
+      background-image: linear-gradient(180deg, #ffffff 0, #ffffff 30%, #00cef2 100%);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;

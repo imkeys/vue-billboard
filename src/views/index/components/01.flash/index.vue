@@ -328,9 +328,8 @@ export default {
       return res
     },
     getCityPos (data) {
-      console.log('data ==> ', data)
       var res = []
-      var allCity = [...new Set(data)]
+      var allCity = [...new Set(data.flat(1))]
       allCity.forEach(city => {
         res.push({
           name: city,
@@ -347,8 +346,10 @@ export default {
       return res
     },
     // 获取数据
-    getWebData () {
-      getWebDatas({}).then(result => {
+    async getWebData () {
+      try {
+        const result = await getWebDatas()
+        console.log('data ==> ', result)
         this.options.series = this.options.series.concat({
           name: 'city',
           type: 'scatter',
@@ -387,13 +388,14 @@ export default {
           },
           data: this.convertData(this.finalList)
         })
-        this.setEchartOption()
-      }).catch(error => {
+        this.initEchartMap()
+      } catch (error) {
         console.log(error)
-      })
+      }
     }
   },
   created () {
+    this.setEchartOption()
     this.getWebData()
   },
   mounted () {

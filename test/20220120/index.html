@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="ui-copy-right-item" id="x2">
+    <span class="ui-copy-right-item">11</span>
+    <span class="ui-copy-right-item">11</span>
+    <span class="ui-copy-right-item">22</span>
+  </div>
+  <div id="x1">
+    <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279776185&amp;web_id=1279776185"></script>
+  </div>
+  <script src="https://s.jingwxcx.com/lib/pc/js/jquery/jquery-1.11.3.min.js"></script>
+  <script>
+    $('#x1').find('a').each(function (index, item) {
+      const href = $(this).attr('href')
+      console.log(href)
+      console.log(index, item.outerHTML)
+      if (href.indexOf('www.cnzz.com/stat/website.php')) {
+        $('#x2').append('<span class="ui-copy-right-item">'+ item.outerHTML +'</span>')
+      }
+    })
+  </script>
+</body>
+</html>

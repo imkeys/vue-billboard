@@ -12,7 +12,7 @@
     </div>
     <div class="inner">
       <div class="thead">
-        <h3>满意度统计</h3>
+        <h3>07.满意度统计</h3>
       </div>
       <div class="tbody">
         <div>
@@ -106,7 +106,7 @@ export default {
     }
     .right {
       display: flex;
-      margin: 0 0 0 160px;
+      margin: 0 0 0 120px;
     }
     .process {
       flex: 1;

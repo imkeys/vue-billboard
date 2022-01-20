@@ -173,4 +173,5 @@ a {
 }
 .el-box .inner .tbody {
   position: relative;
+  overflow: hidden;
 }

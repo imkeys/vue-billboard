@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h2>东部战区作战推演沙盘 · Dine</h2>
+    <h2>东部战区作战推演沙盘 · 沙雕一号</h2>
   </div>
 </template>
 

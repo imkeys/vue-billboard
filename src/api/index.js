@@ -1,8 +1,8 @@
 import request from '@/utils/request'
 
-export function getHomeData (data) {
+export function getWebDatas (data) {
   return request({
-    url: '/home/data',
+    url: '/web/data',
     method: 'get',
     params: data
   })

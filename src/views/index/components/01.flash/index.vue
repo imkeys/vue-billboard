@@ -12,58 +12,22 @@
 
 <script>
 import './china.js'
-var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z'
-var geoCoordMap = {
-  '西安': [108.948021, 34.263161],
-  '东莞': [113.746262, 23.046238]
-}
-var origin = [
-  { 'fn': '西安', 'f_lat': '34.263161', 'f_lon': '108.948021', 'tn': '东莞', 't_lat': '23.046238', 't_lon': '113.746262' }
-]
-var finalList = [
-  ['西安', '东莞']
-]
-
-var convertData = function (data) {
-  var res = []
-  for (var i = 0; i < data.length; i++) {
-    var dataItem = data[i]
-    var fromCoord = geoCoordMap[dataItem[0]]
-    var toCoord = geoCoordMap[dataItem[1]]
-    if (fromCoord && toCoord) {
-      res.push({
-        fromName: dataItem[0],
-        toName: dataItem[1],
-        coords: [fromCoord, toCoord],
-        value: origin.filter(i => i.fn === dataItem[0] && i.tn === dataItem[1]).length
-      })
-    }
-  }
-  return res
-}
-
-var getCityPos = function (data) {
-  var res = []
-  var allCity = [...new Set(data.flat(1))]
-  allCity.forEach(city => {
-    res.push({
-      name: city,
-      label: {
-        normal: {
-          formatter: '{b}',
-          position: 'right',
-          show: true
-        }
-      },
-      value: geoCoordMap[city]
-    })
-  })
-  return res
-}
+import { getWebDatas } from '@/api/index'
 
 export default {
   data () {
     return {
+      planePath: 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z',
+      geoCoordMap: {
+        '西安': [108.948021, 34.263161],
+        '东莞': [113.746262, 23.046238]
+      },
+      origin: [
+        { 'fn': '西安', 'f_lat': '34.263161', 'f_lon': '108.948021', 'tn': '东莞', 't_lat': '23.046238', 't_lon': '113.746262' }
+      ],
+      finalList: [
+        ['西安', '东莞']
+      ],
       options: {
         tooltip: {
           // mousemove or click
@@ -185,44 +149,6 @@ export default {
             type: 'map',
             geoIndex: 0,
             data: []
-          },
-          {
-            name: 'city',
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            data: getCityPos(finalList),
-            symbolSize: 8,
-            showEffectOn: 'render',
-            rippleEffect: {
-              brushType: 'stroke'
-            },
-            itemStyle: {
-              color: '#fff'
-            },
-            hoverAnimation: true,
-            zlevel: 1
-          },
-          {
-            type: 'lines',
-            zlevel: 2,
-            symbol: ['none', 'arrow'],
-            symbolSize: 10,
-            effect: {
-              show: true,
-              period: 6,
-              trailLength: 0,
-              symbol: planePath,
-              symbolSize: 15
-            },
-            lineStyle: {
-              normal: {
-                color: '#fff',
-                width: 1,
-                opacity: 0.6,
-                curveness: 0.2
-              }
-            },
-            data: convertData(finalList)
           }
         ]
       },
@@ -383,10 +309,92 @@ export default {
     // 修改echart配制
     setEchartOption () {
       this.options.series[0]['data'] = this.dataList
+    },
+    convertData (data) {
+      var res = []
+      for (var i = 0; i < data.length; i++) {
+        var dataItem = data[i]
+        var fromCoord = this.geoCoordMap[dataItem[0]]
+        var toCoord = this.geoCoordMap[dataItem[1]]
+        if (fromCoord && toCoord) {
+          res.push({
+            fromName: dataItem[0],
+            toName: dataItem[1],
+            coords: [fromCoord, toCoord],
+            value: this.origin.filter(i => i.fn === dataItem[0] && i.tn === dataItem[1]).length
+          })
+        }
+      }
+      return res
+    },
+    getCityPos (data) {
+      console.log('data ==> ', data)
+      var res = []
+      var allCity = [...new Set(data)]
+      allCity.forEach(city => {
+        res.push({
+          name: city,
+          label: {
+            normal: {
+              formatter: '{b}',
+              position: 'right',
+              show: true
+            }
+          },
+          value: this.geoCoordMap[city]
+        })
+      })
+      return res
+    },
+    // 获取数据
+    getWebData () {
+      getWebDatas({}).then(result => {
+        this.options.series = this.options.series.concat({
+          name: 'city',
+          type: 'scatter',
+          coordinateSystem: 'geo',
+          data: this.getCityPos(this.finalList),
+          symbolSize: 8,
+          showEffectOn: 'render',
+          rippleEffect: {
+            brushType: 'stroke'
+          },
+          itemStyle: {
+            color: '#fff'
+          },
+          hoverAnimation: true,
+          zlevel: 1
+        },
+        {
+          type: 'lines',
+          zlevel: 2,
+          symbol: ['none', 'arrow'],
+          symbolSize: 10,
+          effect: {
+            show: true,
+            period: 6,
+            trailLength: 0,
+            symbol: this.planePath,
+            symbolSize: 15
+          },
+          lineStyle: {
+            normal: {
+              color: '#fff',
+              width: 1,
+              opacity: 0.6,
+              curveness: 0.2
+            }
+          },
+          data: this.convertData(this.finalList)
+        })
+        this.setEchartOption()
+      }).catch(error => {
+        console.log(error)
+      })
     }
   },
   created () {
-    this.setEchartOption()
+    this.getWebData()
   },
   mounted () {
     this.$nextTick(() => {

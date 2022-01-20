@@ -28,7 +28,7 @@
                   class="process">
                   <el-progress
                     type="circle"
-                    :width="100"
+                    :width="80"
                     :percentage="item.value"
                     :color="item.color">
                   </el-progress>
@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @height: 110px;
+  @height: 80px;
 
   .el-box {
     right: 30px;
@@ -99,7 +99,7 @@ export default {
     text-align: center;
     .total {
       float: left;
-      line-height: 100px;
+      line-height: 80px;
       font-size: 36px;
       color: #fcb82f;
       font-weight: bold;
@@ -138,11 +138,11 @@ export default {
         text-align: center;
         dt {
           line-height: 24px;
-          font-size: 20px;
+          font-size: 18px;
         }
         dd {
           line-height: 30px;
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }

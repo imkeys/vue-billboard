@@ -183,11 +183,12 @@ export default {
   }
 
   .chart3 {
-    height: 280px;
-    margin: 0 0 -40px;
+    height: 240px;
+    margin: 0 0 -60px;
+    overflow: hidden;
   }
 
   .chart2 {
-    height: calc(@height - 230px);
+    height: calc(@height - 150px);
   }
 </style>

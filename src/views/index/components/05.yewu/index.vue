@@ -109,11 +109,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @height: calc((100vh - 160px) * .5 - 400px);
+  @height: calc((100vh - 160px) * .5 - 360px);
 
   .el-box {
     right: 30px;
-    top: 450px;
+    top: 420px;
     width: 25vw;
     .tbody {
       height: @height;

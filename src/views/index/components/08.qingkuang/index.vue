@@ -20,23 +20,19 @@
             <dl class="list">
               <dd>
                 <i class="iconfont icon-alarm"></i>
-                <h3>今日紧急</h3>
-                <p>26</p>
+                <p>紧急<b>26</b></p>
               </dd>
               <dd>
                 <i class="iconfont icon-zhengchang"></i>
-                <h3>今日正常</h3>
-                <p>278</p>
+                <p>正常<b>16</b></p>
               </dd>
               <dd>
                 <i class="iconfont icon-jinggao"></i>
-                <h3>今日黄牌</h3>
-                <p>13</p>
+                <p>黄牌<b>16</b></p>
               </dd>
               <dd>
                 <i class="iconfont icon-weixianpin"></i>
-                <h3>今日红牌</h3>
-                <p>8</p>
+                <p>红牌<b>28</b></p>
               </dd>
             </dl>
           </div>
@@ -51,7 +47,7 @@
 
   .el-box {
     right: 30px;
-    top: 290px;
+    top: 260px;
     width: 25vw;
     .tbody {
       height: @height;
@@ -72,34 +68,31 @@
         flex: 1;
         margin: 10px;
         position: relative;
-        text-align: left;
-        padding: 10px 0 10px 50px;
+        padding: 10px 10px 10px 10px;
         background: fade(#b9b9b9, 10%);
         i {
-          position: absolute;
-          left: 0;
-          top: 50%;
-          margin: -20px 0 0 0;
+          display: block;
+          margin: 0 auto;
           color: #076ae2;
-          font-size: 32px;
-          width: 50px;
+          font-size: 30px;
+          width: 40px;
           height: 40px;
           line-height: 40px;
           text-align: center;
         }
-        h3 {
+        p {
           color: #bedfff;
           line-height: 25px;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: normal;
-        }
-        p {
-          color: #f8b725;
-          line-height: 25px;
-          font-size: 16px;
-          &::after {
-            content: '件';
-            color: #bedfff;
+          b {
+            color: #f8b725;
+            line-height: 25px;
+            font-size: 14px;
+            &::after {
+              content: '件';
+              color: #bedfff;
+            }
           }
         }
       }

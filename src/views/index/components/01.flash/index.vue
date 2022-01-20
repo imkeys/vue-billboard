@@ -64,14 +64,20 @@ export default {
         },
         visualMap: {
           show: true,
-          left: 26,
+          left: 20,
           top: 100,
           showLabel: true,
+          inRange: {
+            color: ['#ffffff']
+          },
+          textStyle: {
+            color: '#c3dbfd'
+          },
           pieces: [
             {
               gte: 100,
               label: '>= 1000',
-              color: '#ff0000'
+              color: '#596ec9'
             },
             {
               gte: 500,
@@ -105,7 +111,7 @@ export default {
             max: 2
           },
           zoom: 1,
-          top: 50,
+          top: 40,
           label: {
             normal: {
               show: true,
@@ -137,13 +143,7 @@ export default {
       dataList: [
         {
           name: '南海诸岛',
-          value: 100,
-          eventTotal: 100,
-          specialImportant: 10,
-          import: 10,
-          compare: 10,
-          common: 40,
-          specail: 20
+          value: 100
         },
         {
           name: '北京',
@@ -311,7 +311,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @height: calc((100vh - 260px) * .5 + 30px);
+  @height: calc((100vh - 260px) * .5 + 60px);
 
   .el-box {
     left: calc(25vw + 30px);

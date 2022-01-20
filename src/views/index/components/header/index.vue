@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h2>政府部门大数据统计分析</h2>
+    <h2>东部战区作战推演沙盘 · Dine</h2>
   </div>
 </template>
 

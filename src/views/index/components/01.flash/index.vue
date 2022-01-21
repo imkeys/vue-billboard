@@ -4,11 +4,19 @@
       <div class="tbody">
         <div>
           <dl class="tabed">
-            <dd class="active">中国地图</dd>
-            <dd>春节人口流动情况</dd>
+            <dd
+              :class="typi == 'china' ? 'active' : ''"
+              @click="changeTabed('china')">中国地图</dd>
+            <dd
+              :class="typi == 'fly' ? 'active' : ''"
+              @click="changeTabed('fly')">春节人口流动情况</dd>
           </dl>
-          <china-map class="china" />
-          <fly-map class="china" />
+          <china-map
+            v-if="typi == 'fly'"
+            class="chart10" />
+          <fly-map
+            v-if="typi == 'china'"
+            class="chart10" />
         </div>
       </div>
     </div>
@@ -26,6 +34,12 @@ export default {
   },
   data () {
     return {
+      typi: 'china'
+    }
+  },
+  methods: {
+    changeTabed (val) {
+      this.typi = val
     }
   }
 }
@@ -67,7 +81,7 @@ export default {
     }
   }
 
-  .china {
+  .chart10 {
     height: calc(@height - 60px);
   }
 </style>

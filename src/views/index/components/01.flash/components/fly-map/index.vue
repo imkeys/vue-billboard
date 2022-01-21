@@ -1,5 +1,5 @@
 <template>
-  <div class="china"></div>
+  <div class="flyer"></div>
 </template>
 
 <script>
@@ -291,7 +291,7 @@ export default {
   methods: {
     // 初始化中国地图
     initEchartMap () {
-      let chart = document.querySelector('.china')
+      let chart = document.querySelector('.flyer')
       let $chart = this.$echarts.init(chart)
       $chart.setOption(this.options)
       window.addEventListener('resize', () => {
